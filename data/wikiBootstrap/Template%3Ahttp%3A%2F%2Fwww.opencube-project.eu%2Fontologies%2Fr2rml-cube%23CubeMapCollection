@@ -1,0 +1,92 @@
+__NOTOC__
+
+<div class="r2rmleditor triplesMapInitializer">
+<b>Create a new mapping rule:</b>
+{{#widget: CodeExecution | 
+ passContext = true
+ | args = {{ $this$ | '%label' }}
+ | userInput = {{ 
+      {{ name = 'label'
+       | required = false
+       | displayName = 'Mapping Name'
+       | componentType = 'SIMPLE'
+      }} }}
+ | method = 'initializeEmptyTriplesMap'
+ | label = 'Create Mapping'
+ | clazz = 'com.fluidops.iwb.r2rml.utils.R2RMLExecution'
+ | render = 'inline'
+}}
+</div>
+
+== Existing Mapping Rules ==
+{{#widget: ActionableResult | 
+ columnConfiguration = {{ 
+      {{ variableName = 'TriplesMap'
+       | displayName = 'Mapping Rule'
+      }} }}
+ | query = 'SELECT ?TriplesMap WHERE {
+   ?TriplesMap a rrqb:CubeMap .
+   ?? rrqb:containsCubeMap ?TriplesMap
+}'
+ | rowActions = {{ 
+      {{ passContext = true
+       | userInput = {{ 
+            {{ name = 'newName'
+             | displayName = 'New Name'
+             | componentType = 'SIMPLE'
+            }} }}
+       | args = {{'?:TriplesMap' | '%newName' }}
+       | method = 'renameTriplesMap'
+       | label = 'Rename'
+       | clazz = 'com.fluidops.iwb.r2rml.utils.R2RMLExecution'
+       | render = 'img:/ajax/icons/edit.png'
+      }} |
+      {{ passContext = false
+       | onFinish = 'reload'
+       | args = {{ '?:TriplesMap' | $this$ }}
+       | method = 'deleteTriplesMap'
+       | label = 'Delete'
+       | confirm = 'Are you sure you want to remove this mapping rule?'
+       | clazz = 'com.fluidops.iwb.r2rml.utils.R2RMLExecution'
+       | render = 'img:/ajax/icons/delete.png'
+      }} }}
+}}
+<div style="margin-top:25px;">
+{{#widget: com.fluidops.iwb.r2rml.widget.R2RMLImportExportWidget 
+ | triplesMapCollectionURI = $this$
+}}
+</div>
+
+== Available Tables to Map==
+{{#widget: ActionableResult | 
+ columnConfiguration = {{ 
+      {{ valueResolver = 'LABEL'
+       | variableName = 'Table'
+      }} }}
+ | query = 'SELECT DISTINCT ?Table (COUNT(?c) AS ?numberOfColumns) WHERE {
+   ?? <http://www.fluidops.com/ontologies/r2rmlExtension/sourceSchema> ?db .
+   ?db <http://www.fluidops.com/ontologies/RelationalSchemaOntology/schema> ?schema.
+   ?schema <http://www.fluidops.com/ontologies/RelationalSchemaOntology/schemaTable> ?Table .
+   ?Table a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Table>;
+      <http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableType> ?type;
+      <http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableColumn> ?c .
+} GROUP BY ?Table ?type'
+ | numberOfDisplayedRows = 10
+ | rowActions = {{ 
+      {{ passContext = true
+       | userInput = {{ 
+            {{ name = 'label'
+             | displayName = 'Mapping name'
+             | componentType = 'SIMPLE'
+            }} }}
+       | args = {{ $this$ | '%label' | '?:Table' }}
+       | label = 'Create mapping for table'
+       | method = 'initializeTriplesMapFromTableUri'
+       | clazz = 'com.fluidops.iwb.r2rml.utils.R2RMLExecution'
+       | render = 'img:/ajax/icons/add.png'
+      }} }}
+}}
+
+
+<!-- include empty template for extensions -->
+{{Template:http://www.fluidops.com/ontologies/r2rmlExtension/IncTriplesMapCollectionExtensionPage}}

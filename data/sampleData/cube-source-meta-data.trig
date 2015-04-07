@@ -1,0 +1,159 @@
+
+<http://www.fluidops.com/resource/User/byName/admin/1426583528676/User> {
+	<http://www.fluidops.com/resource/cubeTest/MappingCollection15492860966272149604333862821600> a <http://www.opencube-project.eu/ontologies/r2rml-cube#CubeMapCollection> .
+}
+
+<http://www.fluidops.com/resource/User/byName/admin/1426580968586/User> {
+	<http://www.fluidops.com/resource/cubeTest/MappingCollection15492860966272149604333862821600> <http://www.w3.org/2000/01/rdf-schema#label> "Cube Extension Mapping Collection for Data Source http://www.fluidops.com/resource/cubeTest" ;
+		<http://www.fluidops.com/ontologies/r2rmlExtension/sourceSchema> <http://www.fluidops.com/resource/cubeTest/MetaData> ;
+		<http://www.fluidops.com/ontologies/r2rmlExtension/dataSource> <http://www.fluidops.com/resource/cubeTest> .
+}
+
+<http://www.fluidops.com/resource/cubeTest/1426519637253/Provider> {
+	<http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/ColumnDataType> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI.Table> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Column> , <http://www.fluidops.com/ontologies/RelationalSchemaOntology/TableColumn> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/ColumnInfo> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID.Table> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Column> , <http://www.fluidops.com/ontologies/RelationalSchemaOntology/TableColumn> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/ColumnInfo> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/ColumnInfo> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Schema> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Table> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE.Table> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Column> , <http://www.fluidops.com/ontologies/RelationalSchemaOntology/TableColumn> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DatabaseMetaInformation> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Key=.PK> a <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Key> , <http://www.fluidops.com/ontologies/RelationalSchemaOntology/Constraint> , <http://www.fluidops.com/ontologies/RelationalSchemaOntology/PrimaryKey> .
+	
+	<http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> <http://www.w3.org/2000/01/rdf-schema#label> "VARCHAR" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI.Table> <http://www.w3.org/2000/01/rdf-schema#label> "Column CPI" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID.Table> <http://www.w3.org/2000/01/rdf-schema#label> "Column UID" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC> <http://www.w3.org/2000/01/rdf-schema#label> "PUBLIC" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED> <http://www.w3.org/2000/01/rdf-schema#label> "PUBLIC.CPIJAPANSTLOUISFED" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE.Table> <http://www.w3.org/2000/01/rdf-schema#label> "Column DATE" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData> <http://www.w3.org/2000/01/rdf-schema#label> "Database Meta Information" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/DatabaseMetaInformation> <http://www.w3.org/2000/01/rdf-schema#label> "Database Vendor Information" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Key=.PK> <http://www.w3.org/2000/01/rdf-schema#label> "" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/schema> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/DatabaseMetaInformation> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DatabaseInfo/productName> "H2" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableColumn> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI.Table> , <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID.Table> , <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE.Table> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/databaseMetaInformation> <http://www.fluidops.com/resource/cubeTest/MetaData/DatabaseMetaInformation> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoFullName> "PUBLIC.CPIJAPANSTLOUISFED.CPI" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoFullName> "PUBLIC.CPIJAPANSTLOUISFED.DATE" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoFullName> "PUBLIC.CPIJAPANSTLOUISFED.UID" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI.Table> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfo> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID.Table> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfo> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE.Table> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfo> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoName> "CPI" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoName> "DATE" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoName> "UID" .
+	
+	<http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/jdbcCode> "12"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoDatatype> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoDatatype> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoDatatype> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoShortName> "CPIJAPANSTLOUISFED.CPI" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoShortName> "CPIJAPANSTLOUISFED.DATE" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnInfoShortName> "CPIJAPANSTLOUISFED.UID" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnNullConstraint> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnNullConstraint> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnNullConstraint> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/schemaName> "PUBLIC" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableName> "CPIJAPANSTLOUISFED" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.CPI.Table> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnPosition> "3"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.UID.Table> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnPosition> "1"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Column=PUBLIC.CPIJAPANSTLOUISFED.DATE.Table> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnPosition> "2"^^<http://www.w3.org/2001/XMLSchema#integer> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/schemaTable> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED> .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Key=.PK> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/constraintName> "" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/DatabaseMetaInformation> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DatabaseInfo/productVersion> "1.3.174 (2013-10-19)" .
+	
+	<http://www.fluidops.com/ontologies/RelationalSchemaOntology/DataType/instance/VARCHAR> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/columnDataTypeName> "VARCHAR" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableConstraint> <http://www.fluidops.com/resource/cubeTest/MetaData/instance/Schema=PUBLIC/Table=PUBLIC.CPIJAPANSTLOUISFED/Key=.PK> ;
+		<http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableType> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/TableType/TABLE> ;
+		<http://www.fluidops.com/ontologies/RelationalSchemaOntology/tableFullName> "PUBLIC.CPIJAPANSTLOUISFED" .
+	
+	<http://www.fluidops.com/resource/cubeTest/MetaData/DatabaseMetaInformation> <http://www.fluidops.com/ontologies/RelationalSchemaOntology/DatabaseInfo/databaseInfo> "H2 1.3.174 (2013-10-19)" .
+}
+
+<http://www.fluidops.com/resource/User/byName/admin/1426584619562/User> {
+	<http://www.fluidops.com/resource/cubeTest/MappingCollection15492860966272149604333862821600> <http://www.opencube-project.eu/ontologies/r2rml-cube#containsCubeMap> <http://www.fluidops.com/resource/triplesMap_ObservationRule_cube> .
+}
+
+<http://www.fluidops.com/MetaContext> {
+	<http://www.fluidops.com/resource/User/byName/admin/1426583528676/User> a <http://www.fluidops.com/Context> ;
+		<http://www.w3.org/2000/01/rdf-schema#label> "Data input form" ;
+		<http://www.fluidops.com/editable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+		<http://www.fluidops.com/contextType> "User" ;
+		<http://www.fluidops.com/contextSrc> <http://www.fluidops.com/resource/User/byName/admin> ;
+		<http://www.fluidops.com/contextState> "Published" ;
+		<http://purl.org/dc/elements/1.1/date> "2015-03-17T10:12:08.676" .
+	
+	<http://www.fluidops.com/resource/User/byName/admin/1426580968586/User> a <http://www.fluidops.com/Context> ;
+		<http://www.w3.org/2000/01/rdf-schema#label> "Data integration" ;
+		<http://www.fluidops.com/editable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+		<http://www.fluidops.com/contextType> "User" ;
+		<http://www.fluidops.com/contextSrc> <http://www.fluidops.com/resource/User/byName/admin> ;
+		<http://www.fluidops.com/contextState> "Published" ;
+		<http://purl.org/dc/elements/1.1/date> "2015-03-17T09:29:28.586" .
+	
+	<http://www.fluidops.com/resource/cubeTest/1426519637253/Provider> a <http://www.fluidops.com/Context> ;
+		<http://www.w3.org/2000/01/rdf-schema#label> "Data integration" ;
+		<http://www.fluidops.com/contextType> "Provider" ;
+		<http://www.fluidops.com/contextSrc> <http://www.fluidops.com/resource/cubeTest> ;
+		<http://www.fluidops.com/contextState> "Published" ;
+		<http://purl.org/dc/elements/1.1/date> "2015-03-16T16:27:17.253" .
+	
+	<http://www.fluidops.com/resource/User/byName/admin/1426584619562/User> a <http://www.fluidops.com/Context> ;
+		<http://www.w3.org/2000/01/rdf-schema#label> "Data input form" ;
+		<http://www.fluidops.com/editable> "true"^^<http://www.w3.org/2001/XMLSchema#boolean> ;
+		<http://www.fluidops.com/contextType> "User" ;
+		<http://www.fluidops.com/contextSrc> <http://www.fluidops.com/resource/User/byName/admin> ;
+		<http://www.fluidops.com/contextState> "Published" ;
+		<http://purl.org/dc/elements/1.1/date> "2015-03-17T10:30:19.562" .
+}

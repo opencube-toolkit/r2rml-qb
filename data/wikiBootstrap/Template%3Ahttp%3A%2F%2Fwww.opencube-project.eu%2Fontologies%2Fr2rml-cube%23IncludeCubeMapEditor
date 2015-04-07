@@ -1,0 +1,181 @@
+=== Observation ID ===
+
+<div style="clear: both;">
+{{#sparql: SELECT ?ObservationMap WHERE {
+   ?? rr:subjectMap ?ObservationMap .
+   }
+  | format = template
+  | template = Template:rrqb:IncludeObservationMapEditor
+}}
+</div>
+<div style="clear: both;"/>
+
+=== Measures ===
+
+<div style="clear: both;">
+{{#sparql: SELECT ?MeasureMap ?MeasureProperty ?ObjectMap WHERE {
+   ?? rrqb:measureMap ?MeasureMap .
+   ?MeasureMap rrqb:measure ?MeasureProperty .
+   ?MeasureMap rr:objectMap ?ObjectMap .
+   }
+  | format = template
+  | template = Template:rrqb:IncludeMeasureMapEditor
+}}
+</div>
+
+<div style="clear: both;">
+{{#widget: InstanceCreation | 
+ onSave = 
+   {{ args = {{ '%newURI' }}
+    | method = 'addObjectMap'
+    | passContext = false
+    | clazz = 'com.fluidops.iwb.opencube.r2rml.R2RMLCubeEditorUtils'
+   }}
+ | userDefinedProperties = {{ 
+      {{ minCardinality = 1
+       | componentType = 'DROPDOWN'
+       | enforceConstraints = true
+       | datatype = 'rdfs:Resource'
+       | values = $SELECT ?measure WHERE {
+   
+   ?? rrqb:cube ?cube .
+   ?cube qb:structure ?structure .
+   ?structure qb:component ?component .
+   ?component qb:measure ?measure .
+   FILTER NOT EXISTS {
+     ?? rrqb:measureMap ?map .
+     ?map rrqb:measure ?measure .
+   }
+}$
+       | property = 'rrqb:measure'
+       | showAlways = true
+       | maxCardinality = 1
+      }} }}
+ | instanceType = 'rrqb:MeasureMap'
+ | preDefinedProperties = {{ 
+      {{ inverse = true
+       | values = {{ $this$ }}
+       | property = 'rrqb:measureMap'
+      }} }}
+ | title = 'Add'
+ | uri = 'http://www.fluidops.com/resource/MeasureMap_$fluidRandom$'
+}}
+</div>
+
+=== Imported Dimensions ===
+
+<div style="clear: both;">
+{{#sparql: SELECT DISTINCT ?DimensionMap ?DimensionProperty ?ObjectMap WHERE {
+   ?? rrqb:dimensionMap ?DimensionMap .
+   ?DimensionMap rrqb:dimension ?DimensionProperty .
+   ?DimensionMap rr:objectMap ?ObjectMap .
+     {
+        ?ObjectMap rrqb:objectMapType "COLUMN" .
+     } UNION {
+        ?ObjectMap rr:column ?column .
+     }
+   }
+  | format = template
+  | template = Template:rrqb:IncludeDimensionMapColumnEditor
+}}
+</div>
+
+<div style="clear: both;">
+{{#widget: InstanceCreation | 
+ onSave = 
+   {{ args = {{ '%newURI' | 'COLUMN' }}
+    | method = 'addObjectMapWithType'
+    | passContext = false
+    | clazz = 'com.fluidops.iwb.opencube.r2rml.R2RMLCubeEditorUtils'
+   }}
+ | userDefinedProperties = {{ 
+      {{ minCardinality = 1
+       | componentType = 'DROPDOWN'
+       | enforceConstraints = true
+       | datatype = 'rdfs:Resource'
+       | values = $SELECT ?dimension WHERE {
+   ?? rrqb:cube ?cube .
+   ?cube qb:structure ?structure .
+   ?structure qb:component ?component .
+   ?component qb:dimension ?dimension .
+   FILTER NOT EXISTS {
+     ?? rrqb:dimensionMap ?map .
+     ?map rrqb:dimension ?dimension .
+   }
+}$
+       | property = 'rrqb:dimension'
+       | showAlways = true
+       | maxCardinality = 1
+      }} }}
+ | instanceType = 'rrqb:DimensionMap'
+ | preDefinedProperties = {{ 
+      {{ inverse = true
+       | values = {{ $this$ }}
+       | property = 'rrqb:dimensionMap'
+      }} }}
+ | title = 'Add'
+ | uri = 'http://www.fluidops.com/resource/DimensionMap_$fluidRandom$'
+}}
+</div>
+
+
+=== Fixed Dimensions ===
+
+
+<div style="clear: both;">
+{{#sparql: SELECT DISTINCT ?DimensionMap ?DimensionProperty ?ObjectMap WHERE {
+   ?? rrqb:dimensionMap ?DimensionMap .
+   ?DimensionMap rrqb:dimension ?DimensionProperty .
+   ?DimensionMap rr:objectMap ?ObjectMap .
+     {
+        ?ObjectMap rrqb:objectMapType "CONSTANT" .
+     } UNION {
+        ?ObjectMap rr:constant ?constant .
+     }
+   }
+  | format = template
+  | template = Template:rrqb:IncludeDimensionMapCodeEditor
+}}
+</div>
+
+<div style="clear: both;">
+{{#widget: InstanceCreation | 
+ onSave = 
+   {{ args = {{ '%newURI' | 'CONSTANT' }}
+    | method = 'addObjectMapWithType'
+    | passContext = false
+    | clazz = 'com.fluidops.iwb.opencube.r2rml.R2RMLCubeEditorUtils'
+   }}
+ | userDefinedProperties = {{ 
+      {{ minCardinality = 1
+       | componentType = 'DROPDOWN'
+       | enforceConstraints = true
+       | datatype = 'rdfs:Resource'
+       | values = $SELECT ?dimension WHERE {
+   ?? rrqb:cube ?cube .
+   ?cube qb:structure ?structure .
+   ?structure qb:component ?component .
+   ?component qb:dimension ?dimension .
+   FILTER NOT EXISTS {
+     ?? rrqb:dimensionMap ?map .
+     ?map rrqb:dimension ?dimension .
+   }
+}$
+       | property = 'rrqb:dimension'
+       | showAlways = true
+       | maxCardinality = 1
+      }} }}
+ | instanceType = 'rrqb:DimensionMap'
+ | preDefinedProperties = {{ 
+      {{ inverse = true
+       | values = {{ $this$ }}
+       | property = 'rrqb:dimensionMap'
+      }} }}
+ | title = 'Add'
+ | uri = 'http://www.fluidops.com/resource/DimensionMap_$fluidRandom$'
+}}
+</div>
+
+<!-- include empty template for extensions -->
+{{Template:http://www.fluidops.com/ontologies/r2rmlExtension/IncTriplesMapExtensionPage}}
+

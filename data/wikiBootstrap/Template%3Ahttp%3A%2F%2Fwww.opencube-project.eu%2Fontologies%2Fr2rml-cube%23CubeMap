@@ -1,0 +1,61 @@
+<table><tr>
+<td>{{#show: {{this}} | ^rrqb:containsCubeMap | label=Mapping Collection}}
+    > {{#show: {{this}} | rdfs:label}}</td>
+<td>
+{{#widget: CodeExecution | 
+ passContext = true
+ | onFinish = 'reload'
+ | args = {{ $this$ | '%newName' }}
+ | userInput = {{ 
+      {{ name = 'newName'
+       | displayName = 'New Name'
+       | componentType = 'SIMPLE'
+      }} }}
+ | method = 'renameTriplesMap'
+ | label = 'Rename Mapping Rule'
+ | clazz = 'com.fluidops.iwb.r2rml.utils.R2RMLExecution'
+ | render = 'img:/ajax/icons/edit.png'
+}}
+</td>
+</tr></table>
+
+=== Edit Mapping Rule ===
+{{#ifexpr: {{#sparql: ASK { ?collection rrqb:containsCubeMap {{this}} } }} | | Error: this mapping rule is not associated with any mapping collection. }}
+
+{{#ifexpr: {{#sparql: ASK { {{this}} <http://www.w3.org/ns/r2rml#logicalTable> ?lt . ?lt rdf:type ?ltType } }}
+    | {{#sparql: SELECT ?collectionid WHERE {?collectionid rrqb:containsCubeMap ??}
+        | format=template | template=Template:rrqb:LogicalTablePreview }}
+    | 
+}}
+
+=== Cube ===
+
+
+<div class="floatLeft" style="width: 70%; padding: 10px;">
+{{#widget: TripleEditor | 
+ clusterByDomain = false
+ | editMode = 'GROUPWISE'
+ | showUnfilledProperties = true
+ | startInEditMode = false
+ | addNewProperties = false
+ | propertyConfiguration = {{ 
+      {{ minCardinality = 1
+       | componentType = 'RDF_VALUE'
+       | enforceConstraints = true
+       | datatype = 'rdfs:Resource'
+       | values = $SELECT ?cube WHERE { ?cube a qb:DataSet }$
+       | property = 'rrqb:cube'
+       | showAlways = true
+       | maxCardinality = 1
+      }} }}
+}}
+</div>
+<div style="clear: both;"/>
+
+{{#ifexpr: {{#sparql: ASK { {{this}} rrqb:cube ?cube } }} | 
+   {{Template:http://www.opencube-project.eu/ontologies/r2rml-cube#IncludeCubeMapEditor}}
+   | }}
+
+<!-- some spacing for popup scrolling -->
+<div style="height:300px;">
+</div>

@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rr "http://www.w3.org/ns/r2rml#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY qb "http://purl.org/linked-data/cube#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rrqb "http://www.opencube-project.eu/ontologies/r2rml-cube#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.opencube-project.eu/ontologies/r2rml-cube#"
+     xml:base="http://www.opencube-project.eu/ontologies/r2rml-cube"
+     xmlns:rr="http://www.w3.org/ns/r2rml#"
+     xmlns:qb="http://purl.org/linked-data/cube#"
+     xmlns:rrqb="http://www.opencube-project.eu/ontologies/r2rml-cube#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.opencube-project.eu/ontologies/r2rml-cube">
+        <owl:imports rdf:resource="http://www.w3.org/ns/r2rml#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#cube -->
+
+    <owl:ObjectProperty rdf:about="&rrqb;cube">
+        <rdfs:range rdf:resource="&qb;DataSet"/>
+        <rdfs:domain rdf:resource="&rrqb;CubeMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#dimension -->
+
+    <owl:ObjectProperty rdf:about="&rrqb;dimension">
+        <rdfs:range rdf:resource="&qb;DimensionProperty"/>
+        <rdfs:domain rdf:resource="&rrqb;DimensionMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#measure -->
+
+    <owl:ObjectProperty rdf:about="&rrqb;measure">
+        <rdfs:range rdf:resource="&qb;MeasureProperty"/>
+        <rdfs:domain rdf:resource="&rrqb;MeasureMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/r2rml#objectMap -->
+
+    <rdf:Description rdf:about="&rr;objectMap">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&rrqb;CubePredicateObjectMap"/>
+                    <rdf:Description rdf:about="&rr;PredicateObjectMap"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/linked-data/cube#DataSet -->
+
+    <owl:Class rdf:about="&qb;DataSet"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#DimensionProperty -->
+
+    <owl:Class rdf:about="&qb;DimensionProperty"/>
+    
+
+
+    <!-- http://purl.org/linked-data/cube#MeasureProperty -->
+
+    <owl:Class rdf:about="&qb;MeasureProperty"/>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#CubeMap -->
+
+    <owl:Class rdf:about="&rrqb;CubeMap">
+        <rdfs:subClassOf rdf:resource="&rr;TriplesMap"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rr;subjectMap"/>
+                <owl:onClass rdf:resource="&rrqb;ObservationMap"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#CubePredicateObjectMap -->
+
+    <owl:Class rdf:about="&rrqb;CubePredicateObjectMap">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rr;objectMap"/>
+                <owl:onClass rdf:resource="&rr;ObjectMap"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#DimensionMap -->
+
+    <owl:Class rdf:about="&rrqb;DimensionMap">
+        <rdfs:subClassOf rdf:resource="&rrqb;CubePredicateObjectMap"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rrqb;dimension"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#MeasureMap -->
+
+    <owl:Class rdf:about="&rrqb;MeasureMap">
+        <rdfs:subClassOf rdf:resource="&rrqb;CubePredicateObjectMap"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rrqb;measure"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opencube-project.eu/ontologies/r2rml-cube#ObservationMap -->
+
+    <owl:Class rdf:about="&rrqb;ObservationMap">
+        <rdfs:subClassOf rdf:resource="&rr;SubjectMap"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&rr;class"/>
+                <owl:hasValue rdf:resource="&qb;Observation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+

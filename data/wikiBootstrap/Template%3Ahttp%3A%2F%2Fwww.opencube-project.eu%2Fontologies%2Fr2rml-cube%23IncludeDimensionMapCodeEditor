@@ -1,0 +1,38 @@
+<div style="clear: both;">
+
+<div class="floatLeft" style="width: 70%; padding: 10px;">
+{{#widget: TripleEditor | 
+ showUnfilledProperties = true
+ | startInEditMode = false
+ | clusterByDomain = false
+ | propertyConfiguration = {{ 
+      {{ minCardinality = 1
+       | showAlways = true
+       | property = 'rr:constant'
+       | datatype = 'rdfs:Resource'
+       | componentType = 'DROPDOWN'
+       | maxCardinality = 1
+       | displayName = '{{{DimensionProperty}}}'
+       | values = $SELECT ?code WHERE { 
+                     {{{DimensionProperty}}} qb:codeList ?codeList . 
+                     ?codeList skosCore04:hasTopConcept ?code . 
+                   }$
+      }} }}
+ | editMode = 'GROUPWISE'
+ | uri = '{{{ObjectMap}}}'
+ | limitProperties = true
+ | showInverseProperties = false
+ | addNewProperties = false
+}}
+</div>
+
+<div style="float:left; padding: 10px 10px; margin-left: 50px;">
+{{#widget: CodeExecution | 
+ passContext = false
+ | args = {{ '{{{DimensionMap}}}' }}
+ | method = 'deleteCubePredicateObjectMap'
+ | label = 'Delete'
+ | clazz = 'com.fluidops.iwb.opencube.r2rml.R2RMLCubeEditorUtils'
+}}
+</div>
+</div>

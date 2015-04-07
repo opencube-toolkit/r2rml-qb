@@ -1,0 +1,104 @@
+@prefix sdmx-measure:  <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix concept:  <http://eurostat.linked-statistics.org/concept#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dic:     <http://eurostat.linked-statistics.org/dic/> .
+@prefix data:    <http://eurostat.linked-statistics.org/data/> .
+@prefix sdmx-concept:  <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix property:  <http://eurostat.linked-statistics.org/property#> .
+@prefix dss:     <http://eurostat.linked-statistics.org/dss#> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix title:   <http://eurostat.linked-statistics.org/title#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx:    <http://purl.org/linked-data/sdmx#> .
+@prefix dsd:     <http://eurostat.linked-statistics.org/dsd/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix rrqb:    <http://www.opencube-project.eu/ontologies/r2rml-cube#> .
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed> a <http://purl.org/linked-data/cube#DataSet> ;
+	rdfs:label "CPI Japan stlouisfed" ;
+	qb:structure <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd> .
+
+<http://purl.org/linked-data/sdmx/2009/dimension#freq> a <http://purl.org/linked-data/cube#DimensionProperty> ;
+	<http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/linked-data/cube#Observation> ;
+	<http://purl.org/linked-data/cube#codeList> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-freq-CodeList> .
+
+<http://eurostat.linked-statistics.org/property#geo> a <http://purl.org/linked-data/cube#DimensionProperty> ;
+	<http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/linked-data/cube#Observation> ;
+	<http://purl.org/linked-data/cube#codeList> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-geo-CodeList> .
+
+<http://purl.org/linked-data/sdmx/2009/dimension#timePeriod> a <http://purl.org/linked-data/cube#DimensionProperty> ;
+	<http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/linked-data/cube#Observation> .
+
+<http://purl.org/linked-data/sdmx/2009/measure#obsValue> a <http://purl.org/linked-data/cube#MeasureProperty> ;
+	<http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/linked-data/cube#Observation> .
+
+<http://purl.org/linked-data/sdmx/2009/code#freq-M> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-freq-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Monthly"@en .
+
+<http://eurostat.linked-statistics.org/property#infotype> a <http://purl.org/linked-data/cube#DimensionProperty> ;
+	<http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/linked-data/cube#Observation> ;
+	<http://purl.org/linked-data/cube#codeList> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-infotype-CodeList> .
+
+<http://eurostat.linked-statistics.org/property#coicop> a <http://purl.org/linked-data/cube#DimensionProperty> ;
+	<http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/linked-data/cube#Observation> ;
+	<http://purl.org/linked-data/cube#codeList> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-coicop-CodeList> .
+
+<http://eurostat.linked-statistics.org/dic/infotype#INDEX> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-infotype-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Monthly index"@en .
+
+<http://eurostat.linked-statistics.org/dic/geo#JP> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-geo-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Japan"@en .
+
+<http://eurostat.linked-statistics.org/dic/coicop#TOTAL> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-coicop-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Total (CPI Index)"@en .
+
+<http://eurostat.linked-statistics.org/dic/coicop#FOOD> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-coicop-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Food including alcohol and tobacco"@en .
+
+<http://eurostat.linked-statistics.org/dic/coicop#NRG> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-coicop-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Energy"@en .
+
+<http://eurostat.linked-statistics.org/dic/coicop#TOT_X_NRG_FOOD> a <http://www.w3.org/2004/02/skos/core#Concept> ;
+	<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-coicop-CodeList> ;
+	<http://www.w3.org/2004/02/skos/core#prefLabel> "Overall index excluding energy and seasonal food"@en .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd> a <http://purl.org/linked-data/cube#DataStructureDefinition> ;
+	<http://purl.org/linked-data/cube#component> <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component0> , <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component1> , <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component2> , <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component3> , <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component4> , <http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component5> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component0> <http://purl.org/linked-data/cube#dimension> <http://eurostat.linked-statistics.org/property#coicop> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component1> <http://purl.org/linked-data/cube#dimension> <http://purl.org/linked-data/sdmx/2009/dimension#timePeriod> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component2> <http://purl.org/linked-data/cube#measure> <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component3> <http://purl.org/linked-data/cube#dimension> <http://eurostat.linked-statistics.org/property#geo> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component4> <http://purl.org/linked-data/cube#dimension> <http://eurostat.linked-statistics.org/property#infotype> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-dsd-component5> <http://purl.org/linked-data/cube#dimension> <http://purl.org/linked-data/sdmx/2009/dimension#freq> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-coicop-CodeList> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+	<http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://eurostat.linked-statistics.org/dic/coicop#TOTAL> , <http://eurostat.linked-statistics.org/dic/coicop#FOOD> , <http://eurostat.linked-statistics.org/dic/coicop#NRG> , <http://eurostat.linked-statistics.org/dic/coicop#TOTAL_X_NRG_FOOD> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-geo-CodeList> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+	<http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://eurostat.linked-statistics.org/dic/geo#JP> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-infotype-CodeList> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+	<http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://eurostat.linked-statistics.org/dic/infotype#INDEX> .
+
+<http://www.fluidops.com/resource/CPI_Japan_stlouisfed-freq-CodeList> a <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+	<http://www.w3.org/2004/02/skos/core#hasTopConcept> <http://purl.org/linked-data/sdmx/2009/code#freq-M> .

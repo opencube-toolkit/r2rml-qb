@@ -1,0 +1,8 @@
+__NOTOC__
+
+{{#sparql: SELECT ?logicaltable WHERE {{{this}} <http://www.w3.org/ns/r2rml#logicalTable> ?logicaltable} | format=template | template=Template:http://www.fluidops.com/ontologies/r2rmlExtension/IncR2RMLEditorLogicalTablePreview}}
+{{#widget: com.fluidops.iwb.r2rml.widget.R2RMLDataPreviewWidget | 
+ triplesMapURI = $this$
+ | collectionId = '{{{collectionid}}}'
+ | numberOfRows = 1
+}}

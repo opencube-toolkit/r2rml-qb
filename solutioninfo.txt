@@ -1,0 +1,55 @@
+================================
+=       Solution Outline       = 
+================================
+
+This solution contains experimental implementation of the R2RML extension for data cubes and the corresponding enhancements to the DataOps functionalities.
+
+
+== Customer ==
+
+Currently internal only. 
+
+
+== Project Manager ==
+
+Andriy Nikolov
+
+== Technical Contact ==
+
+Andriy Nikolov
+
+== Target Platform ==
+
+IWB
+
+== Target Environment ==
+
+n/a
+
+== Solution Description ==
+
+n/a
+	
+== Troubleshooting ==
+
+n/a
+
+== Upgrade Procedures ==
+
+n/a
+
+== Solution Tests ==
+
+n/a
+
+=== Description of test environment ===
+
+For initial testing, you can use a simple example defined in the sampleData folder. 
+The steps to test include:
+- Create a data source by importing the CSV file sampleData/CPI_Japan_stlouisfed.csv with the ID :cubeTest. 
+- Import the TTL and Trig files containing the data source metadata, DSD structure of the test cube, and the cube map from the sampleData folder.
+- Navigate to the page of the resource triplesMap_ObservationRule_cube
+
+== Other ==
+
+none

@@ -1,0 +1,24 @@
+<div style="clear: both;">
+
+<div class="floatLeft" style="width: 70%; padding: 10px;">
+{{#widget: TripleEditor | 
+ showUnfilledProperties = true
+ | startInEditMode = false
+ | clusterByDomain = false
+ | propertyConfiguration = {{ 
+      {{ minCardinality = 1
+       | showAlways = true
+       | property = 'rr:template'
+       | datatype = 'xsd:string'
+       | componentType = 'RDF_VALUE'
+       | maxCardinality = 1
+       | displayName = 'Observation ID'
+      }} }}
+ | editMode = 'GROUPWISE'
+ | uri = '{{{ObservationMap}}}'
+ | limitProperties = true
+ | showInverseProperties = false
+ | addNewProperties = false
+}}
+</div>
+</div>

@@ -1,0 +1,79 @@
+@prefix sdmx-measure:  <http://purl.org/linked-data/sdmx/2009/measure#> .
+@prefix concept:  <http://eurostat.linked-statistics.org/concept#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix dic:     <http://eurostat.linked-statistics.org/dic/> .
+@prefix data:    <http://eurostat.linked-statistics.org/data/> .
+@prefix sdmx-concept:  <http://purl.org/linked-data/sdmx/2009/concept#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix property:  <http://eurostat.linked-statistics.org/property#> .
+@prefix dss:     <http://eurostat.linked-statistics.org/dss#> .
+@prefix qb:      <http://purl.org/linked-data/cube#> .
+@prefix sdmx-code:  <http://purl.org/linked-data/sdmx/2009/code#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix title:   <http://eurostat.linked-statistics.org/title#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdmx:    <http://purl.org/linked-data/sdmx#> .
+@prefix dsd:     <http://eurostat.linked-statistics.org/dsd/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sdmx-dimension:  <http://purl.org/linked-data/sdmx/2009/dimension#> .
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix rrqb:    <http://www.opencube-project.eu/ontologies/r2rml-cube#> .
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+
+<http://www.fluidops.com/resource/predicateObjectMap_obsValue> a rrqb:MeasureMap ;
+	<http://www.w3.org/ns/r2rml#objectMap> <http://www.fluidops.com/resource/objectMap_CPI> ;
+	rrqb:measure <http://purl.org/linked-data/sdmx/2009/measure#obsValue> .
+
+<http://www.fluidops.com/resource/objectMap_freq-M> a <http://www.w3.org/ns/r2rml#ObjectMap> ;
+	<http://www.w3.org/ns/r2rml#constant> <http://purl.org/linked-data/sdmx/2009/code#freq-M> .
+
+<http://www.fluidops.com/resource/predicateObjectMap_freq> a rrqb:DimensionMap ;
+	<http://www.w3.org/ns/r2rml#objectMap> <http://www.fluidops.com/resource/objectMap_freq-M> ;
+	rrqb:dimension <http://purl.org/linked-data/sdmx/2009/dimension#freq> .
+
+<http://www.fluidops.com/resource/objectMap_TOTAL> a <http://www.w3.org/ns/r2rml#ObjectMap> ;
+	<http://www.w3.org/ns/r2rml#constant> <http://eurostat.linked-statistics.org/dic/coicop#TOTAL> .
+
+<http://www.fluidops.com/resource/objectMap_INDEX> a <http://www.w3.org/ns/r2rml#ObjectMap> ;
+	<http://www.w3.org/ns/r2rml#constant> <http://eurostat.linked-statistics.org/dic/infotype#INDEX> .
+
+<http://www.fluidops.com/resource/objectMap_CPI> a <http://www.w3.org/ns/r2rml#ObjectMap> ;
+	<http://www.w3.org/ns/r2rml#column> "CPI" .
+
+<http://www.fluidops.com/resource/subjectMap_Observation> a rrqb:ObservationMap ;
+	<http://www.w3.org/ns/r2rml#template> "http://www.fluidops.com/resource/OBS,M,INDEX,TOTAL,JP,{DATE}" .
+
+<http://www.fluidops.com/resource/logicalTable_CPIJAPANSTLOUISFED> a <http://www.w3.org/ns/r2rml#BaseTableOrView> , <http://www.w3.org/ns/r2rml#LogicalTable> ;
+	<http://www.w3.org/ns/r2rml#tableName> "PUBLIC.CPIJAPANSTLOUISFED" .
+
+<http://www.fluidops.com/resource/predicateObjectMap_infotype> a rrqb:DimensionMap ;
+	<http://www.w3.org/ns/r2rml#objectMap> <http://www.fluidops.com/resource/objectMap_INDEX> ;
+	rrqb:dimension <http://eurostat.linked-statistics.org/property#infotype> .
+
+<http://www.fluidops.com/resource/predicateObjectMap_coicop> a rrqb:DimensionMap ;
+	<http://www.w3.org/ns/r2rml#objectMap> <http://www.fluidops.com/resource/objectMap_TOTAL> ;
+	rrqb:dimension <http://eurostat.linked-statistics.org/property#coicop> .
+
+<http://www.fluidops.com/resource/triplesMap_ObservationRule_cube> a rrqb:CubeMap ;
+	<http://www.w3.org/2000/01/rdf-schema#label> "ObservationRule_cube" ;
+        rrqb:cube <http://www.fluidops.com/resource/CPI_Japan_stlouisfed> ;
+	<http://www.w3.org/ns/r2rml#logicalTable> <http://www.fluidops.com/resource/logicalTable_CPIJAPANSTLOUISFED> ;
+	rrqb:dimensionMap  <http://www.fluidops.com/resource/predicateObjectMap_freq> , <http://www.fluidops.com/resource/predicateObjectMap_dataSet> , <http://www.fluidops.com/resource/predicateObjectMap_infotype> , <http://www.fluidops.com/resource/predicateObjectMap_coicop> , <http://www.fluidops.com/resource/predicateObjectMap_geo> , <http://www.fluidops.com/resource/predicateObjectMap_timePeriod> ;
+        rrqb:measureMap <http://www.fluidops.com/resource/predicateObjectMap_obsValue> ;
+	<http://www.w3.org/ns/r2rml#subjectMap> <http://www.fluidops.com/resource/subjectMap_Observation> .
+
+<http://www.fluidops.com/resource/objectMap_DATE> a <http://www.w3.org/ns/r2rml#ObjectMap> ;
+	<http://www.w3.org/ns/r2rml#column> "DATE" .
+
+<http://www.fluidops.com/resource/objectMap_JP> a <http://www.w3.org/ns/r2rml#ObjectMap> ;
+	<http://www.w3.org/ns/r2rml#constant> <http://eurostat.linked-statistics.org/dic/geo#JP> .
+
+<http://www.fluidops.com/resource/predicateObjectMap_geo> a rrqb:DimensionMap ;
+	<http://www.w3.org/ns/r2rml#objectMap> <http://www.fluidops.com/resource/objectMap_JP> ;
+	rrqb:dimension <http://eurostat.linked-statistics.org/property#geo> .
+
+<http://www.fluidops.com/resource/predicateObjectMap_timePeriod> a rrqb:DimensionMap ;
+	<http://www.w3.org/ns/r2rml#objectMap> <http://www.fluidops.com/resource/objectMap_DATE> ;
+	rrqb:dimension <http://purl.org/linked-data/sdmx/2009/dimension#timePeriod> .

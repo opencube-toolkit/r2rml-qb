@@ -1,0 +1,10 @@
+qb=http://purl.org/linked-data/cube#
+sdmx-measure=http://purl.org/linked-data/sdmx/2009/measure#
+sdmx-dimension=http://purl.org/linked-data/sdmx/2009/dimension#
+skosCore04=http://www.w3.org/2004/02/skos/core#
+dcat=http://www.w3.org/ns/dcat#
+esprop=http://eurostat.linked-statistics.org/property#
+dcterms=http://purl.org/dc/terms/
+opencube=http://www.fluidops.com/ontologies/opencube/
+rrqb=http://www.opencube-project.eu/ontologies/r2rml-cube#
+rr=http://www.w3.org/ns/r2rml#
